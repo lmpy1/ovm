@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link href="{{ url_for('static', filename='js/bootstrap.min.js') }}" media="screen">
+  </head>
+  <body>
+    {% block content %}
+    {% endblock %}
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  </body>
+</html>
