@@ -1,13 +1,37 @@
+{% from 'macros.html' import navitem with context %}
 <!DOCTYPE html>
 
 <html>
   <head>
-    <link href="{{ url_for('static', filename='js/bootstrap.min.js') }}" media="screen">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" media="screen">
   </head>
   <body>
-    {% block content %}
-    {% endblock %}
+    <div class="container">
+      {% block header %}
+        <div class="masthead">
+          <h3 class="muted">DruckDoc</h3>
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container">
+                <ul class="nav">
+                  {{ navitem('Home', '/', 'index') }}
+                  {{ navitem('Produkte') }}
+                  {{ navitem('Dienstleistungen') }}
+                  {{ navitem('Kunden') }}
+                  {{ navitem('Service', '/service', 'service') }}
+                  {{ navitem('Über uns') }}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endblock %}
+      {% block content %}
+      {% endblock %}
+    </div>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   </body>
 </html>

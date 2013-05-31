@@ -1,0 +1,7 @@
+{% macro navitem(title, path='', function='') %}
+  {% if path != '' and function != '' %}
+    <li{% if request.path == path %} class="active"{% endif %}><a href="{{ url_for(function) }}">{{ title }}</a></li>
+  {% else %}
+    <li><a href="#">{{ title }}</a></li>
+  {% endif %}
+{% endmacro %}
