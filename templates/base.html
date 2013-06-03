@@ -10,13 +10,13 @@
     <div class="container">
       {% block header %}
         <div class="masthead">
-          <h3 class="muted">DruckDoc</h3>
+          <h3 class="muted">Web Media</h3>
           <div class="navbar">
             <div class="navbar-inner">
               <div class="container">
                 <ul class="nav">
-                  {{ navitem('Home', '/', 'index') }}
-                  {{ navitem('Produkte') }}
+                  {{ navitem('Home', '/home', 'home') }}
+                  {{ navitem('Produkte', '/products', 'products') }}
                   {{ navitem('Dienstleistungen') }}
                   {{ navitem('Kunden') }}
                   {{ navitem('Service', '/service', 'service') }}
@@ -27,9 +27,18 @@
           </div>
         </div>
       {% endblock %}
+    </div>
+    <div class="container">
       {% block content %}
       {% endblock %}
     </div>
+    {% block footer %}
+      <div id="footer" class="navbar navbar-fixed-bottom container">
+        <div class="navbar-inner">
+          <p class="muted credit">Web Media GmbH Frankfurter Straße 6 Kassel</p>
+        </div>
+      </div>
+    {% endblock %}
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>

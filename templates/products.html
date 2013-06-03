@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="nav-header">Premiumprodukte</li>
+          {{ navitem('Item') }}
+          {{ navitem('Item') }}
+          {{ navitem('Item') }}
+          {{ navitem('Garantieverwaltung', '/products/guarantee', 'product_guarantee') }}
+          <li class="nav-header">Standardprodukte</li>
+          {{ navitem('Item') }}
+          {{ navitem('Item') }}
+          {{ navitem('Item') }}
+          {{ navitem('Item') }}
+          {{ navitem('Item') }}
+        </ul>
+      </div>
+    </div>
+    <div class="span9">
+      {% block innercontent %}
+        <h3>Unsere Produkte</h3>
+        <p>In unserem breiten Produktspektrum… auch was für Sie dabei.</a>
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}
